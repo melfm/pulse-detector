@@ -21,11 +21,11 @@ GSL_LIBS = -lgsl
 pulse:	PulseDetector.o main.o
 	$(CC) $(LFLAGS) $(BOOST_LIBS) $(OPENCV_LIBS) $(GSL_LIBS) PulseDetector.o main.o -o pulse 
 	
-main.o: main.cpp PulseDetector.h
+main.o: main.cpp lib/PulseDetector.h
 	$(CC) $(CFLAGS) -o main.o main.cpp 
 
-PulseDetector.o:	PulseDetector.cpp PulseDetector.h
-	$(CC) $(CFLAGS) PulseDetector.cpp
+PulseDetector.o:	lib/PulseDetector.cpp lib/PulseDetector.h
+	$(CC) $(CFLAGS) lib/PulseDetector.cpp
 
 
 clean:
