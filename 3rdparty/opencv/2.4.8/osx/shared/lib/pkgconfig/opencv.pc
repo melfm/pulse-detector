@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/Users/timur/Desktop
+exec_prefix=${prefix}
+libdir=
+includedir_old=${prefix}/include/opencv
+includedir_new=${prefix}/include
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 2.4.8
+Libs:  ${exec_prefix}/lib/libopencv_core.dylib ${exec_prefix}/lib/libopencv_highgui.dylib ${exec_prefix}/lib/libopencv_imgproc.dylib ${exec_prefix}/lib/libopencv_objdetect.dylib
+Cflags: -I${includedir_old} -I${includedir_new}
