@@ -1,4 +1,4 @@
-#include "lib/PulseDetector.h"
+#include "pulse/PulseDetector.h"
 
 
 using namespace std;

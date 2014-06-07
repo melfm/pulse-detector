@@ -19,13 +19,13 @@ OPENCV_LIBS = -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect
 GSL_LIBS = -lgsl
 
 pulse:	PulseDetector.o main.o
-	$(CC) $(LFLAGS) $(BOOST_LIBS) $(OPENCV_LIBS) $(GSL_LIBS) PulseDetector.o main.o -o pulse 
+	$(CC) $(LFLAGS) $(BOOST_LIBS) $(OPENCV_LIBS) $(GSL_LIBS) PulseDetector.o main.o -o pulseapp 
 	
-main.o: main.cpp lib/PulseDetector.h
+main.o: main.cpp pulse/PulseDetector.h
 	$(CC) $(CFLAGS) -o main.o main.cpp 
 
-PulseDetector.o:	lib/PulseDetector.cpp lib/PulseDetector.h
-	$(CC) $(CFLAGS) lib/PulseDetector.cpp
+PulseDetector.o:	pulse/PulseDetector.cpp pulse/PulseDetector.h
+	$(CC) $(CFLAGS) pulse/PulseDetector.cpp
 
 
 clean:
